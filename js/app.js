@@ -1,10 +1,11 @@
 const newAnimals = document.getElementById("newAnimals");
-let listAnimals = [];
-newAnimals.addEventListener('submit', submitForm)
+const getComandList = document.getElementById("getComandList");
 
-function submitForm(event) {
-    const obj = {};
-    // Отменяем стандартное поведение браузера с отправкой формы
+let listAnimals = [];
+newAnimals.addEventListener('submit', createNewAnimals)
+getComandList.addEventListener('submit', getComand)
+
+function createNewAnimals(event) {
     event.preventDefault();
     const name = this.animalsName.value;
     const birthday = this.birthday.value;
@@ -37,16 +38,51 @@ function submitForm(event) {
         case 'Donkey':
             newAnimal = new Donkey(name, birthday, loadСapacity);
             break;
-
-        default:
-            break;
     }
     listAnimals.push(newAnimal);
     console.log(listAnimals)
+}
+
+function getComand(event) {
+    event.preventDefault();
+    const name = this.animal.value;
+    let obj;
+    listAnimals.forEach(element => {
+        if (element.name === name) {
+            obj = element;
+        }
+    });
+    checkClass(obj)
 
 }
 
-
+function checkClass(obj) {
+    if (obj instanceof Dog) {
+        obj.voice()
+        obj.sleep()
+        obj.eat()
+    } else if (obj instanceof Cat) {
+        obj.voice()
+        obj.sleep()
+        obj.eat()
+    } else if (obj instanceof Hamster) {
+        obj.voice()
+        obj.sleep()
+        obj.eat()
+    } else if (obj instanceof Horse) {
+        obj.voice()
+        obj.sleep()
+        obj.eat()
+    }else if (obj instanceof Camel) {
+        obj.voice()
+        obj.sleep()
+        obj.eat()
+    }else if (obj instanceof Donkey) {
+        obj.voice()
+        obj.sleep()
+        obj.eat()
+    }
+}
 class HumanFriend {
     constructor(name, birthday) {
         this.name = name;
@@ -60,13 +96,13 @@ class HumanFriend {
         return this.birthday;
     }
     voice() {
-        return 'Издаю звук';
+        return console.log('Издаю звук');
     }
     sleep() {
-        return 'уснул';
+        return console.log('уснул');
     }
     eat() {
-        return 'кушаю';
+        return console.log('кушаю');
     }
 }
 
@@ -79,6 +115,9 @@ class Pet extends HumanFriend {
 class Dog extends Pet {
     constructor(name, birthday) {
         super(name, birthday);
+    }
+    voice() {
+        return console.log('Гав-Гав');
     }
 }
 

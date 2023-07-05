@@ -10,14 +10,14 @@ export class HumanFriend {
     getBirtday() {
         return this.birtday;
     }
-    voise() {
-        return 'Издаю звук';
+    voice() {
+        return console.log('издал звук');
     }
     sleep() {
-        return 'уснул';
+        return console.log('уснул');
     }
     eat() {
-        return 'кушаю';
+        return console.log('кушаю');
     }
 }
 
@@ -30,6 +30,9 @@ export class Pet extends HumanFriend {
 export class Dog extends Pet {
     constructor(name, birthday) {
         super(name, birthday);
+        }
+        voice() {
+            return console.log('гав-гав');
         }
 }
 
