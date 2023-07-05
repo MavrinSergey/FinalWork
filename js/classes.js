@@ -1,4 +1,4 @@
-class HumanFriend {
+export class HumanFriend {
     constructor(name, birtday) {
         this.name = name;
         this.birtday = birtday;
@@ -21,50 +21,50 @@ class HumanFriend {
     }
 }
 
-class Pet extends HumanFriend {
+export class Pet extends HumanFriend {
     constructor(name, birthday) {
         super(name, birthday);
         }
 }
 
-class Dog extends Pet {
+export class Dog extends Pet {
     constructor(name, birthday) {
         super(name, birthday);
         }
 }
 
-class Cat extends Pet {
+export class Cat extends Pet {
     constructor(name, birthday) {
         super(name, birthday);
         }
 }
 
-class Hamster extends Pet {
+export class Hamster extends Pet {
     constructor(name, birthday) {
         super(name, birthday);
         }
 }
 
-class PackAnimal extends HumanFriend {
+export class PackAnimal extends HumanFriend {
     constructor(name, birthday, liftingWeight) {
         super(name, birthday);
         this.liftingWeight = liftingWeight;
         }
 }
 
-class Horse extends PackAnimal {
+export class Horse extends PackAnimal {
     constructor(name, birthday, liftingWeight) {
         super(name, birthday, liftingWeight);
         }
 }
 
-class Camel extends PackAnimal {
+export class Camel extends PackAnimal {
     constructor(name, birthday, liftingWeight) {
         super(name, birthday, liftingWeight);
         }
 }
 
-class Donkey extends PackAnimal {
+export class Donkey extends PackAnimal {
     constructor(name, birthday, liftingWeight) {
         super(name, birthday, liftingWeight);
         }

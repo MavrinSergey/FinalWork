@@ -27,4 +27,5 @@
 4пункт - [смотреть скриншот 1](./screenshot/Screenshot_4.1.png)[смотреть скриншот 2](./screenshot/Screenshot_4.2.png)  
 5пункт - [смотреть скриншот](./screenshot/Screenshot_5.png)  
 6пункт - [диаграмма](./Diagram%20Class.drawio)  
-7 - 12пункты - [смотреть файл](./HumanFriendDb.sql)
+7 - 12пункты - [смотреть файл](./HumanFriendDb.sql)  
+13пункт - [смотреть файл](./js/classes.js)

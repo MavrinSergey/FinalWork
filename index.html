@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реестр домашних животных</title>
+</head>
+<body>
+    <form action="#" id="newAnimals">
+        <label for="animalsName">Имя животного</label>
+        <input type="text" name="animalsName">
+
+        <label for="birthday">дата рождения</label>
+        <input type="date" name="birthday">
+
+        <label for="animal">какое животное</label>
+        <select name="animal" id="animal">
+            <option value="Dog">Dog</option>
+            <option value="Cat">Cat</option>
+            <option value="Hamster">Hamster</option>
+            <option value="PackAnimal">PackAnimal</option>
+            <option value="Horse">Horse</option>
+            <option value="Camel">Camel</option>
+        </select>
+        
+        <label for="loadСapacity">Грузоподъемность животного</label>
+        <input type="text" name="loadСapacity" placeholder="только для вьючных животных">
+        <button type="submit" id="createAnimals">Завести новое животное</button>
+    </form>
+
+    <form action="#">
+        <input type="text">
+        <button>какие команды доступны</button>
+    </form>
+
+    <form action="#">
+        <input type="text">
+        <button>Завести новое животное</button>
+    </form>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>
