@@ -119,6 +119,9 @@ class Dog extends Pet {
     voice() {
         return console.log('Гав-Гав');
     }
+    givePaw() {
+        return console.log('На лапу')
+    }
 }
 
 class Cat extends Pet {
@@ -143,6 +146,9 @@ class PackAnimal extends HumanFriend {
 class Horse extends PackAnimal {
     constructor(name, birthday, liftingWeight) {
         super(name, birthday, liftingWeight);
+    }
+    galloping() {
+        return console.log('Скачу галопом')
     }
 }
 
