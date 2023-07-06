@@ -1,9 +1,20 @@
+import { Count, Dog, Cat, Hamster, Horse, Camel, Donkey, HumanFriend  } from "./classes.js";
+
+
+let countAnimals = new Count();
+let listAnimals = [];
 const newAnimals = document.getElementById("newAnimals");
 const getComandList = document.getElementById("getComandList");
+const openFormCreateAnimal = document.getElementById("openFormCreateAnimal");
+const formWrapper = document.querySelector(".form__wrapper");
 
-let listAnimals = [];
+
+openFormCreateAnimal.addEventListener('click', () => {
+    formWrapper.style.display = "flex";
+})
 newAnimals.addEventListener('submit', createNewAnimals)
 getComandList.addEventListener('submit', getComand)
+
 
 function createNewAnimals(event) {
     event.preventDefault();
@@ -38,9 +49,42 @@ function createNewAnimals(event) {
         case 'Donkey':
             newAnimal = new Donkey(name, birthday, loadСapacity);
             break;
+
+        default:
+            break;
     }
+
     listAnimals.push(newAnimal);
-    console.log(listAnimals)
+    countAnimals.add()
+    formWrapper.style.display = "none";
+    createModal(listAnimals)
+}
+
+function createModal(content) {
+    if (document.getElementById("list")) {
+        document.getElementById("list").remove();
+    }
+    const modal = document.createElement('div');
+    modal.classList.add("list");
+    modal.id = "list";
+    let str = "";
+    listAnimals.forEach(el => {
+        str = str + "<Br>" + el.constructor.name + JSON.stringify(el);
+    })
+    modal.innerHTML = `${str}`;
+    document.body.appendChild(modal);
+}
+
+function createModalComand(content) {
+    if (document.getElementById("Comand")) {
+        document.getElementById("Comand").remove();
+    }
+    const modal = document.createElement('div');
+    modal.classList.add("Comand");
+    modal.id = "Comand";
+    let str = content;
+    modal.innerHTML = `${str}`;
+    document.body.appendChild(modal);
 }
 
 function getComand(event) {
@@ -52,114 +96,23 @@ function getComand(event) {
             obj = element;
         }
     });
-    checkClass(obj)
+    createModalComand(checkClass(obj))
+    
 
 }
 
 function checkClass(obj) {
     if (obj instanceof Dog) {
-        obj.voice()
-        obj.sleep()
-        obj.eat()
+        return `${obj.voice()} ${obj.sleep()} ${obj.eat()} ${obj.givePaw()}`
     } else if (obj instanceof Cat) {
-        obj.voice()
-        obj.sleep()
-        obj.eat()
+        return `${obj.voice()}${obj.sleep()}${obj.eat()}`
     } else if (obj instanceof Hamster) {
-        obj.voice()
-        obj.sleep()
-        obj.eat()
+        return `${obj.voice()}${obj.sleep()}${obj.eat()}`
     } else if (obj instanceof Horse) {
-        obj.voice()
-        obj.sleep()
-        obj.eat()
-    }else if (obj instanceof Camel) {
-        obj.voice()
-        obj.sleep()
-        obj.eat()
-    }else if (obj instanceof Donkey) {
-        obj.voice()
-        obj.sleep()
-        obj.eat()
-    }
-}
-class HumanFriend {
-    constructor(name, birthday) {
-        this.name = name;
-        this.birthday = birthday;
-    }
-    getName() {
-        return this.name;
-    }
-
-    getBirthday() {
-        return this.birthday;
-    }
-    voice() {
-        return console.log('Издаю звук');
-    }
-    sleep() {
-        return console.log('уснул');
-    }
-    eat() {
-        return console.log('кушаю');
-    }
-}
-
-class Pet extends HumanFriend {
-    constructor(name, birthday) {
-        super(name, birthday);
-    }
-}
-
-class Dog extends Pet {
-    constructor(name, birthday) {
-        super(name, birthday);
-    }
-    voice() {
-        return console.log('Гав-Гав');
-    }
-    givePaw() {
-        return console.log('На лапу')
-    }
-}
-
-class Cat extends Pet {
-    constructor(name, birthday) {
-        super(name, birthday);
-    }
-}
-
-class Hamster extends Pet {
-    constructor(name, birthday) {
-        super(name, birthday);
-    }
-}
-
-class PackAnimal extends HumanFriend {
-    constructor(name, birthday, liftingWeight) {
-        super(name, birthday);
-        this.liftingWeight = liftingWeight;
-    }
-}
-
-class Horse extends PackAnimal {
-    constructor(name, birthday, liftingWeight) {
-        super(name, birthday, liftingWeight);
-    }
-    galloping() {
-        return console.log('Скачу галопом')
-    }
-}
-
-class Camel extends PackAnimal {
-    constructor(name, birthday, liftingWeight) {
-        super(name, birthday, liftingWeight);
-    }
-}
-
-class Donkey extends PackAnimal {
-    constructor(name, birthday, liftingWeight) {
-        super(name, birthday, liftingWeight);
+        return `${obj.voice()}${obj.sleep()}${obj.eat()}${obj.galloping()}`
+    } else if (obj instanceof Camel) {
+        return `${obj.voice()}${obj.sleep()}${obj.eat()}`
+    } else if (obj instanceof Donkey) {
+        return `${obj.voice()}${obj.sleep()}${obj.eat()}`
     }
 }

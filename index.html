@@ -1,43 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Реестр домашних животных</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <form action="#" id="newAnimals">
-        <label for="animalsName">Имя животного</label>
-        <input type="text" name="animalsName">
 
-        <label for="birthday">дата рождения</label>
-        <input type="date" name="birthday">
+    <div class="form__wrapper">
+        <div class="form">
+            <form action="#" class="form__create-animal" id="newAnimals">
+                <h2 class="form__title">Добавление животного в реестр</h2>
+                <div class="form__inputBox">
+                    <input type="text" name="animalsName">
+                    <span>Имя животного</span>
 
-        <label for="animal">какое животное</label>
-        <select name="animal" id="animal">
-            <option value="Dog">Dog</option>
-            <option value="Cat">Cat</option>
-            <option value="Hamster">Hamster</option>
-            <option value="PackAnimal">PackAnimal</option>
-            <option value="Horse">Horse</option>
-            <option value="Camel">Camel</option>
-        </select>
+                </div>
+                <div class="form__inputBox">
+                    <input type="date" name="birthday">
+                    <span>Дата рождения</span>
 
-        <label for="loadСapacity">Грузоподъемность животного</label>
-        <input type="text" name="loadСapacity" placeholder="только для вьючных животных">
-        <button type="submit" id="createAnimals">Завести новое животное</button>
+                </div>
+                <div class="form__inputBox">
+
+                    <select name="animal" id="animal">
+                        <option value="Dog">Dog</option>
+                        <option value="Cat">Cat</option>
+                        <option value="Hamster">Hamster</option>
+                        <option value="Horse">Horse</option>
+                        <option value="Camel">Camel</option>
+                        <option value="Donkey">Donkey</option>
+                    </select>
+                    <span>Вид животного</span>
+
+                </div>
+                <div class="form__inputBox">
+                    <input type="text" name="loadСapacity" placeholder="только для вьючных животных">
+                    <span>Грузоподъемность животного</span>
+                </div>
+                <button type="submit" class="form__submit" id="createAnimals">Завести новое животное</button>
+            </form>
+        </div>
+    </div>
+
+    <form action="#" id="">
+        <button class="form__submit" id="openFormCreateAnimal">новое животное</button>
     </form>
 
     <form action="#" id="getComandList">
         <input type="text" name="animal">
-        <button>какие команды доступны</button>
+        <button class="form__submit">какие команды доступны</button>
     </form>
 
-    <form action="#">
-        <input type="text">
-        <button>Завести новое животное</button>
-    </form>
-
-    <script src="./js/app.js"></script>
+    <script type="module" src="./js/app.js"></script>
 </body>
+
 </html>
